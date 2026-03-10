@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dados do Brasil</title>
+<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="tema" onclick="trocarTema()">🌙/☀</button>
+
+<header>
+<h1>Dados sobre Gravidez e ISTs no Brasil</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h3>Gravidez na adolescência</h3>
+
+<p>
+Segundo dados do Ministério da Saúde, cerca de <b>400 mil bebês por ano</b> nascem de mães adolescentes no Brasil. Isso representa um desafio social e de saúde pública, pois muitas jovens ainda estão em fase escolar e enfrentam dificuldades para continuar os estudos.
+</p>
+
+<h3>Infecções Sexualmente Transmissíveis (ISTs)</h3>
+
+<p>
+As ISTs são doenças transmitidas principalmente por relações sexuais sem proteção. Entre as mais conhecidas estão:
+</p>
+
+<ul>
+
+<li>HIV</li>
+<li>Sífilis</li>
+<li>Gonorreia</li>
+<li>Clamídia</li>
+
+</ul>
+
+<p>
+De acordo com o Ministério da Saúde, houve aumento de casos de sífilis nos últimos anos, principalmente entre jovens. Isso mostra a importância da prevenção e da informação.
+</p>
+
+<h3>Importância da prevenção</h3>
+
+<p>
+O uso de preservativos, o acesso à informação e os testes regulares são formas importantes de prevenir doenças e garantir uma vida sexual saudável.
+</p>
+
+</div>
+
+<canvas id="grafico"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('grafico');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: ['2018','2019','2020','2021','2022'],
+
+datasets: [{
+
+label: 'Casos de Sífilis em Jovens',
+
+data: [45000,52000,61000,68000,72000],
+
+borderWidth:1
+
+}]
+
+},
+
+options:{
+responsive:true
+}
+
+});
+
+</script>
+
+<a class="voltar" href="index.html">⬅ Voltar</a>
+
+</div>
+
+<script>
+
+function trocarTema(){
+
+document.body.classList.toggle("light")
+
+}
+
+</script>
+</body>
+</html>

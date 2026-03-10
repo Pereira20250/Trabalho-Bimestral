@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz</title>
+<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <button class="tema" onclick="trocarTema()">🌙/☀</button>
+
+<header>
+<h1>Quiz sobre Educação Sexual</h1>
+<p>Teste seus conhecimentos</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h3 id="pergunta"></h3>
+
+<div id="respostas"></div>
+
+<p id="resultado"></p>
+
+<button onclick="proxima()">Próxima pergunta</button>
+
+</div>
+
+<a class="voltar" href="index.html">⬅ Voltar</a>
+
+</div>
+
+<script>
+
+const quiz = [
+
+{
+pergunta: "O que significa IST?",
+opcoes: [
+"Infecção Sexualmente Transmissível",
+"Informação Sexual Técnica",
+"Infecção Social Transitória"
+],
+correta: 0
+},
+
+{
+pergunta: "Qual método ajuda a prevenir ISTs?",
+opcoes: [
+"Preservativo",
+"Somente remédio",
+"Não existe prevenção"
+],
+correta: 0
+},
+
+{
+pergunta: "A educação sexual incentiva sexo precoce?",
+opcoes: [
+"Sim",
+"Não, ela informa e previne",
+"Depende"
+],
+correta: 1
+}
+
+];
+
+let atual = 0;
+
+function mostrarPergunta(){
+
+document.getElementById("resultado").innerHTML = "";
+
+let q = quiz[atual];
+
+document.getElementById("pergunta").innerHTML = q.pergunta;
+
+let respostas = "";
+
+q.opcoes.forEach((opcao,i)=>{
+
+respostas += `<button onclick="responder(${i})">${opcao}</button><br><br>`;
+
+});
+
+document.getElementById("respostas").innerHTML = respostas;
+
+}
+
+function responder(i){
+
+if(i === quiz[atual].correta){
+
+document.getElementById("resultado").innerHTML = "✅ Resposta correta!";
+
+}else{
+
+document.getElementById("resultado").innerHTML = "❌ Resposta incorreta";
+
+}
+
+}
+
+function proxima(){
+
+atual++;
+
+if(atual >= quiz.length){
+
+document.querySelector(".card").innerHTML = "<h2>🎉 Quiz finalizado!</h2>";
+
+return;
+
+}
+
+mostrarPergunta();
+
+}
+
+mostrarPergunta();
+
+</script>
+
+<script>
+
+function trocarTema(){
+
+document.body.classList.toggle("light")
+
+}
+
+</script>
+</body>
+</html>

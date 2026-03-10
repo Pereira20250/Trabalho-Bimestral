@@ -1,0 +1,156 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+transition:0.3s;
+}
+
+/* CORES PADRÃO (modo escuro) */
+
+body{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#ffffff;
+--button:#3b82f6;
+
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+}
+
+/* MODO CLARO */
+
+body.light{
+
+--bg:#f1f5f9;
+--card:#ffffff;
+--text:#0f172a;
+--button:#2563eb;
+
+}
+
+body{
+
+background-image: url("image.png");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:30px;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+/* CARDS */
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+animation:fade 1s;
+}
+
+/* MENU */
+
+.menu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:20px;
+}
+
+.menu a{
+text-decoration:none;
+background:var(--button);
+padding:15px;
+border-radius:10px;
+text-align:center;
+color:white;
+font-weight:bold;
+}
+
+.menu a:hover{
+transform:scale(1.05);
+}
+
+/* BOTÕES */
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+background:var(--button);
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+/* BOTÃO TEMA */
+
+.tema{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+/* VOLTAR */
+
+.voltar{
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+color:#3b82f6;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:600px){
+
+.menu{
+grid-template-columns:1fr;
+}
+
+header h1{
+font-size:24px;
+}
+
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
